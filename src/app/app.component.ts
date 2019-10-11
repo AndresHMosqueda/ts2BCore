@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { User } from './user.model';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Test2BC';
+export class AppComponent implements OnInit {
+  //users$:User[];
+ 
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(){
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+
+    //return this.dataService.getUsers()
+      //.subscribe(data => this.users$ = data);
+    
+  }
 }
